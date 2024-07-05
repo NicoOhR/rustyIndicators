@@ -1,4 +1,4 @@
-mod animate;
+pub mod animate;
 
 #[cfg(test)]
 mod tests {
