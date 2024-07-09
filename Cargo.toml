@@ -3,4 +3,12 @@ name = "loading_icon"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "loading_icon"
+path = "src/lib.rs"
+
+[[bin]]
+name = "icon_test"
+path = "src/main.rs"
+
 [dependencies]

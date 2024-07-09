@@ -4,14 +4,17 @@ pub mod animate;
 mod tests {
     use std::io::{self, BufWriter, Cursor, Read};
 
+    use animate::Context;
+
     use super::*;
 
     #[test]
     fn it_works() {
         let mut buffer = Cursor::new(Vec::new());
+        let mut context = Context::new();
         {
             let mut buf_writer = BufWriter::new(&mut buffer);
-            animate::start(&mut buf_writer);
+            let _ = animate::start(&mut buf_writer, &mut context);
         }
         buffer.set_position(0);
         let mut content = String::new();
